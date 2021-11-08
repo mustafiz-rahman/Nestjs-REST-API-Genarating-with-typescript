@@ -5,10 +5,8 @@ import {CreateMessageDto} from './dto/create-message.dto'
 @Controller('messages')
 export class MessagesController {
 
-    messageServices: MessagesService;
-    constructor(){
-        this.messageServices= new MessagesService();
-    }
+    
+    constructor(public messageServices: MessagesService ){}
 
     @Get('/:id')
     async findOne(@Param('id') id:string){
